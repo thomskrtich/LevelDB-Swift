@@ -20,7 +20,6 @@
 		B3C60DF11E84FE460029D8B3 /* env.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C60DE11E84FE460029D8B3 /* env.h */; };
 		B3C60DF21E84FE460029D8B3 /* filter_policy.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C60DE21E84FE460029D8B3 /* filter_policy.h */; };
 		B3C60DF31E84FE460029D8B3 /* iterator.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C60DE31E84FE460029D8B3 /* iterator.h */; };
-		B3C60DF41E84FE460029D8B3 /* options.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C60DE41E84FE460029D8B3 /* options.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B3C60DF51E84FE460029D8B3 /* slice.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C60DE51E84FE460029D8B3 /* slice.h */; };
 		B3C60DF61E84FE460029D8B3 /* status.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C60DE61E84FE460029D8B3 /* status.h */; };
 		B3C60DF71E84FE460029D8B3 /* table.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C60DE71E84FE460029D8B3 /* table.h */; };
@@ -179,7 +178,6 @@
 				B3C60DEC1E84FE460029D8B3 /* c.h in Headers */,
 				B3C60DCC1E84FDC10029D8B3 /* LevelDBForSwift.h in Headers */,
 				B3C60DD91E84FE400029D8B3 /* Wrapper.hpp in Headers */,
-				B3C60DF41E84FE460029D8B3 /* options.h in Headers */,
 				B3C60DF61E84FE460029D8B3 /* status.h in Headers */,
 				B3C60DF21E84FE460029D8B3 /* filter_policy.h in Headers */,
 				B3C60DF71E84FE460029D8B3 /* table.h in Headers */,
@@ -246,12 +244,13 @@
 				TargetAttributes = {
 					B3C60DBA1E84FDC10029D8B3 = {
 						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 					B3C60DC31E84FDC10029D8B3 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = EG49RAY3R6;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -459,7 +458,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -484,7 +483,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Binea.LevelDBForSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -497,7 +496,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Binea.LevelDBForSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -510,7 +509,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Binea.LevelDBForSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
