@@ -29,6 +29,13 @@ open class LevelDB {
         self.init(filePath: filePath)
     }
     
+    public func destroy(name: String) -> Bool {
+        let filePath = NSHomeDirectory() + "/Documents/" + name
+        var cChar: [CChar] = [CChar].init(repeating: 0, count: 2048)
+        _ = filePath.getCString(&cChar, maxLength: 2048, encoding: .utf8)
+        return c_destroyLeveldb(&cChar)
+    }
+    
     public subscript(key: String) -> String? {
         get {
             guard let db = self.db else {
