@@ -77,7 +77,7 @@ open class LevelDB {
 
 public extension LevelDB {
     //MARK: - Data
-    public func set(_ value: Data, forKey key: String) {
+    func set(_ value: Data, forKey key: String) {
         let basePointer = UnsafeMutablePointer<Int8>.allocate(capacity: value.count)
         basePointer.initialize(repeating: 0, count: value.count)
         let pointer = UnsafeMutableBufferPointer<Int8>.init(start: basePointer, count: value.count)
@@ -95,7 +95,7 @@ public extension LevelDB {
         basePointer.deallocate()
     }
     
-    public func getData(forKey key: String) -> Data? {
+    func getData(forKey key: String) -> Data? {
         guard let db = self.db else {
             return nil
         }
@@ -110,7 +110,7 @@ public extension LevelDB {
     }
     
     //MARK: - Int
-    public func set(_ value: Int?, forKey key: String) {
+    func set(_ value: Int?, forKey key: String) {
         if let value = value {
             self[key] = "\(value)"
         } else {
@@ -118,7 +118,7 @@ public extension LevelDB {
         }
     }
     
-    public func getInt(forKey key: String) -> Int? {
+    func getInt(forKey key: String) -> Int? {
         if let value = self[key] {
             return Int(value)
         }
@@ -126,7 +126,7 @@ public extension LevelDB {
     }
     
     //MARK: - Float
-    public func set(_ value: Float?, forKey key: String) {
+    func set(_ value: Float?, forKey key: String) {
         if let value = value {
             self[key] = "\(value)"
         } else {
@@ -134,7 +134,7 @@ public extension LevelDB {
         }
     }
     
-    public func getFloat(forKey key: String) -> Float? {
+    func getFloat(forKey key: String) -> Float? {
         if let value = self[key] {
             return Float(value)
         }
@@ -142,7 +142,7 @@ public extension LevelDB {
     }
     
     //MARK: - Date
-    public func set(_ value: Date?, forKey key: String) {
+    func set(_ value: Date?, forKey key: String) {
         if let value = value {
             self[key] = "\(value.timeIntervalSince1970)"
         } else {
@@ -150,7 +150,7 @@ public extension LevelDB {
         }
     }
     
-    public func getDate(forKey key: String) -> Date? {
+    func getDate(forKey key: String) -> Date? {
         if let value = self[key], let time = TimeInterval(value) {
             return Date.init(timeIntervalSince1970: time)
         }

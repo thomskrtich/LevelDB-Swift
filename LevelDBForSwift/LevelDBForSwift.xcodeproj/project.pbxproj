@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68F965552268FC2D0059E769 /* LevelDBForSwift.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 68F965542268FC2D0059E769 /* LevelDBForSwift.podspec */; };
 		B3C60DC51E84FDC10029D8B3 /* LevelDBForSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C60DBB1E84FDC10029D8B3 /* LevelDBForSwift.framework */; };
 		B3C60DCA1E84FDC10029D8B3 /* LevelDBForSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C60DC91E84FDC10029D8B3 /* LevelDBForSwiftTests.swift */; };
 		B3C60DCC1E84FDC10029D8B3 /* LevelDBForSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C60DBE1E84FDC10029D8B3 /* LevelDBForSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		68F965542268FC2D0059E769 /* LevelDBForSwift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LevelDBForSwift.podspec; path = ../LevelDBForSwift.podspec; sourceTree = "<group>"; };
 		B3C60DBB1E84FDC10029D8B3 /* LevelDBForSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LevelDBForSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3C60DBE1E84FDC10029D8B3 /* LevelDBForSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LevelDBForSwift.h; sourceTree = "<group>"; };
 		B3C60DBF1E84FDC10029D8B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				B3C60DBD1E84FDC10029D8B3 /* LevelDBForSwift */,
 				B3C60DC81E84FDC10029D8B3 /* LevelDBForSwiftTests */,
 				B3C60DBC1E84FDC10029D8B3 /* Products */,
+				68F965542268FC2D0059E769 /* LevelDBForSwift.podspec */,
 			);
 			sourceTree = "<group>";
 		};
@@ -257,10 +260,11 @@
 			};
 			buildConfigurationList = B3C60DB51E84FDC10029D8B3 /* Build configuration list for PBXProject "LevelDBForSwift" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = B3C60DB11E84FDC10029D8B3;
 			productRefGroup = B3C60DBC1E84FDC10029D8B3 /* Products */;
@@ -278,6 +282,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68F965552268FC2D0059E769 /* LevelDBForSwift.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,7 +462,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -481,7 +486,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Binea.LevelDBForSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -494,7 +499,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Binea.LevelDBForSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -507,7 +512,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Binea.LevelDBForSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
