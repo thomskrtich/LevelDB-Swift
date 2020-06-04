@@ -39,10 +39,10 @@ void c_closeLeveldb(void* leveldb)
 }
 
 
-void c_leveldbSetValue(void* leveldb, _CString_ key, _CString_ value)
+void c_leveldbSetValue(void* leveldb, _CString_* key, _CString_* value)
 {
-    leveldb::Slice keySlice = leveldb::Slice(key.basePtr, key.lenght);
-    leveldb::Slice valueSlice = leveldb::Slice(value.basePtr, value.lenght);
+    leveldb::Slice keySlice = leveldb::Slice(key->basePtr, key->lenght);
+    leveldb::Slice valueSlice = leveldb::Slice(value->basePtr, value->lenght);
     leveldb::DB *_db = (leveldb::DB *)leveldb;
     leveldb::WriteOptions writeOption;
     leveldb::Status status = _db->Put(writeOption, keySlice, valueSlice);

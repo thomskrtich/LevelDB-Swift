@@ -57,14 +57,18 @@ open class LevelDB {
             guard var keyChar: [CChar] = key.cString(using: .utf8) else {
                 return
             }
-            let keyCstring = _CString_(basePtr: &keyChar, lenght: keyChar.count)
+            var keyCstring = _CString_(basePtr: &keyChar, lenght: keyChar.count)
             
-            guard var valueChar: [CChar] = newValue?.cString(using: .utf8) else {
+            guard var value: String = newValue else {
                 c_leveldbDeleteValue(db, keyCstring);
                 return
             }
-            let valueCstring = _CString_(basePtr: &valueChar, lenght: valueChar.count)
-            c_leveldbSetValue(db, keyCstring, valueCstring)
+            var valueChar = UnsafeMutablePointer<CChar>.allocate(capacity: value.count)
+            valueChar.initialize(from: value.cString(using: .utf8)!, count: value.count)
+            
+            var valueCstring = _CString_(basePtr: valueChar, lenght: value.count)
+            c_leveldbSetValue(db, &keyCstring, &valueCstring)
+            valueChar.deallocate()
         }
     }
     
@@ -89,9 +93,9 @@ public extension LevelDB {
         guard var keyChar: [CChar] = key.cString(using: .utf8) else {
             return
         }
-        let keyCstring = _CString_(basePtr: &keyChar, lenght: keyChar.count)
-        let valueCstring = _CString_(basePtr: pointer.baseAddress, lenght: pointer.count)
-        c_leveldbSetValue(db, keyCstring, valueCstring)
+        var keyCstring = _CString_(basePtr: &keyChar, lenght: keyChar.count)
+        var valueCstring = _CString_(basePtr: pointer.baseAddress, lenght: pointer.count)
+        c_leveldbSetValue(db, &keyCstring, &valueCstring)
         basePointer.deallocate()
     }
     
