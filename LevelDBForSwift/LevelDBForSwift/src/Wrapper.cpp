@@ -61,7 +61,7 @@ _CString_ c_leveldbGetValue(void* leveldb, struct _CString_* key)
     if (!status.ok() && !status.IsNotFound()) {
         printf("%s:%d c_leveldbGetValue error", __FILE__, __LINE__);
     }
-    long size = valueString.size();
+    long size = valueString.size()+1;
     char* p = (char*)malloc(size * sizeof(char));
     std::strcpy(p, valueString.c_str());
      _CString_ result;
