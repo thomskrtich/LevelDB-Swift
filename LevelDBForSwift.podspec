@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "LevelDBForSwift"
-  s.version      = "1.1.0"
+  s.version      = "1.1.1"
   s.summary      = "A Swift Key/Value DataBase for Wrapper from google's LevelDB."
   s.swift_version = "5.0"
 
@@ -66,7 +66,7 @@ Pod::Spec.new do |s|
   #
 
   # s.platform     = :ios
-  s.platform     = :ios, "10.0"
+  s.platform     = :ios, "12.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
