@@ -29,6 +29,19 @@ let chinese = db["中文"]
 db.close()
 ```
 
+cmake -S. -B build -GXcode \        
+    -DCMAKE_SYSTEM_NAME=iOS \
+    "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" \
+    -DCMAKE_OSX_DEPLOYMENT_TARGET=13.0 \
+    -DCMAKE_INSTALL_PREFIX=`pwd`/_install \
+    -DCMAKE_XCODE_ATTRIBUTE_ONLY_ACTIVE_ARCH=NO \
+    -DCMAKE_IOS_INSTALL_COMBINED=YES \
+    -DLEVELDB_BUILD_TESTS=OFF \
+    -DCMAKE_XCODE_ATTRIBUTE_GCC_WARN_64_TO_32_BIT_CONVERSION=NO \
+    -DCMAKE_BUILD_TYPE=Release
+
+cmake --build build --config Release --target leveldb -- -sdk iphonesimulator
+
 ## License
 The MIT License (MIT)
 

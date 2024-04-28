@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "LevelDBForSwift"
-  s.version      = "1.1.1"
+  s.version      = "1.2.0"
   s.summary      = "A Swift Key/Value DataBase for Wrapper from google's LevelDB."
   s.swift_version = "5.0"
 
@@ -66,7 +66,7 @@ Pod::Spec.new do |s|
   #
 
   # s.platform     = :ios
-  s.platform     = :ios, "12.0"
+  s.platform     = :ios, "13.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -92,12 +92,12 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Classes", "LevelDBForSwift/**/*.{swift,hpp,cpp,h,m}"
+  s.source_files  = "Classes", "LevelDBForSwift/LevelDBForSwift/**/*.{swift,hpp,cpp,h,m}"
   s.exclude_files = "LevelDBForSwift/LevelDBForSwiftTests/*"
 
   s.public_header_files = "LevelDBForSwift/LevelDBForSwift/LevelDBForSwift.h", "LevelDBForSwift/LevelDBForSwift/src/Wrapper.hpp"
 
-  s.vendored_libraries = "LevelDBForSwift/leveldb/*.a"
+  s.vendored_frameworks = "LevelDBForSwift/leveldb.xcframework"
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -134,10 +134,13 @@ Pod::Spec.new do |s|
   #  you can include multiple dependencies to ensure it works.
 
   s.requires_arc = true
+   
+  # s.xcconfig = { 'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'YES' }
+  # s.static_framework = true
 
-   s.xcconfig = { "HEADER_SEARCH_PATHS" => "$SRCROOT/leveldb/include" }
-   s.xcconfig = { "ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES" => "NO" }
-   # s.xcconfig = { "OTHER_LDFLAGS" => "-l\"leveldblib\" -l\"memenvlib\"" }
+  # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$SRCROOT/leveldb/include" }
+  # s.xcconfig = { "ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES" => "NO" }
+  # s.xcconfig = { "OTHER_LDFLAGS" => "-l\"leveldblib\" -l\"memenvlib\"" }
    
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
